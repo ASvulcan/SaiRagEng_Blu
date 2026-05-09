@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
-import { motion, useAnimation, useInView } from "framer-motion";
-import { useRef } from "react";
+import { useEffect, useState, useRef } from "react";
+import { motion, useInView } from "framer-motion";
+import aboutBg from "../../assets/about-bg.png";
 
 function Counter({ from, to, duration = 2, suffix = "" }: { from: number; to: number; duration?: number; suffix?: string }) {
   const [count, setCount] = useState(from);
@@ -27,7 +27,15 @@ function Counter({ from, to, duration = 2, suffix = "" }: { from: number; to: nu
 
 export function About() {
   return (
-    <section id="about" className="py-24 bg-[#F7F9FC] text-[#0B1F33] relative overflow-hidden">
+    <section id="about" className="py-24 text-[#0B1F33] relative overflow-hidden">
+      {/* Background photograph — right half only */}
+      <div
+        className="absolute right-0 top-0 w-1/2 h-full bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${aboutBg})` }}
+      />
+      {/* Fade the photo into the white background */}
+      <div className="absolute right-0 top-0 w-1/2 h-full bg-gradient-to-r from-[#F7F9FC] via-[#F7F9FC]/30 to-transparent" />
+      <div className="absolute inset-0 bg-[#F7F9FC]/70" />
       {/* Decorative Grid */}
       <div className="absolute top-0 right-0 w-1/3 h-full opacity-5 pointer-events-none" style={{
         backgroundImage: `linear-gradient(#1F3A5F 1px, transparent 1px), linear-gradient(90deg, #1F3A5F 1px, transparent 1px)`,

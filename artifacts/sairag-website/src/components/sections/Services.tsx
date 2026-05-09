@@ -6,6 +6,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import servicesBg from "../../assets/services-bg.png";
 
 const services = [
   {
@@ -58,8 +59,15 @@ const services = [
 
 export function Services() {
   return (
-    <section id="services" className="py-24 bg-[#0B1F33] text-white relative">
-      {/* Background SVG abstract elements */}
+    <section id="services" className="py-24 text-white relative overflow-hidden">
+      {/* Background photograph */}
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${servicesBg})` }}
+      />
+      {/* Deep overlay for readability */}
+      <div className="absolute inset-0 bg-gradient-to-b from-[#0B1F33]/97 via-[#0B1F33]/92 to-[#111111]/97" />
+      {/* SVG abstract elements */}
       <svg className="absolute top-0 right-0 w-1/2 h-full opacity-5 pointer-events-none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" viewBox="0 0 640 800">
         <line x1="0" y1="0" x2="640" y2="800" stroke="#00AEEF" strokeWidth="2" />
         <line x1="640" y1="0" x2="0" y2="800" stroke="#00AEEF" strokeWidth="2" />

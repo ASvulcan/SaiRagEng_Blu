@@ -1,18 +1,26 @@
 import { motion } from "framer-motion";
 import { ArrowDown } from "lucide-react";
+import heroBg from "../../assets/hero-bg.png";
 
 export function Hero() {
   return (
     <section id="home" className="relative min-h-[100dvh] flex items-center justify-center bg-[#111111] overflow-hidden pt-20">
-      {/* Background blueprint grid */}
-      <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{
+      {/* Background photograph */}
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${heroBg})` }}
+      />
+      {/* Dark gradient overlay — keeps text readable */}
+      <div className="absolute inset-0 bg-gradient-to-r from-[#111111]/95 via-[#0B1F33]/80 to-[#111111]/50" />
+      {/* Blueprint grid overlay */}
+      <div className="absolute inset-0 opacity-[0.04] pointer-events-none" style={{
         backgroundImage: `linear-gradient(#00AEEF 1px, transparent 1px), linear-gradient(90deg, #00AEEF 1px, transparent 1px)`,
         backgroundSize: '40px 40px',
         backgroundPosition: 'center center'
       }}></div>
       
       {/* Abstract geometric shapes */}
-      <svg className="absolute inset-0 w-full h-full pointer-events-none opacity-20" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" viewBox="0 0 1280 800">
+      <svg className="absolute inset-0 w-full h-full pointer-events-none opacity-30" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" viewBox="0 0 1280 800">
         <line x1="128" y1="0" x2="128" y2="800" stroke="#1F3A5F" strokeWidth="1" strokeDasharray="4 4" />
         <line x1="1152" y1="0" x2="1152" y2="800" stroke="#1F3A5F" strokeWidth="1" strokeDasharray="4 4" />
         <circle cx="1152" cy="240" r="4" fill="none" stroke="#00AEEF" strokeWidth="1" />
