@@ -1,7 +1,3 @@
 {
-  "buildCommand": "pnpm --filter sairag-engineering-react run build",
-  "installCommand": "pnpm install",
-  "outputDirectory": "sairag-engineering-react/dist",
-  "framework": "vite",
-  "rootDirectory": "."
+  "rootDirectory": "sairag-engineering-react"
 }
