@@ -1,3 +1,6 @@
 {
-  "rootDirectory": "sairag-engineering-react"
+  "framework": "vite",
+  "buildCommand": "cd sairag-engineering-react && pnpm build",
+  "outputDirectory": "sairag-engineering-react/dist",
+  "installCommand": "pnpm install --frozen-lockfile"
 }
