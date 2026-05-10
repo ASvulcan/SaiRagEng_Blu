@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg: #ffffff;
+    --bg-alt: #f8f9fa;
+    --bg-card: #ffffff;
+    --text: #1a1a2e;
+    --text-muted: #6b7280;
+    --border: #e5e7eb;
+    --accent: #00AEEF;
+    --accent-light: #e0f7fe;
+    --nav-bg: rgba(255, 255, 255, 0.9);
+  }
+
+  .dark {
+    --bg: #0f172a;
+    --bg-alt: #1e293b;
+    --bg-card: #1e293b;
+    --text: #f1f5f9;
+    --text-muted: #94a3b8;
+    --border: #334155;
+    --accent: #38bdf8;
+    --accent-light: #0c4a6e;
+    --nav-bg: rgba(15, 23, 42, 0.9);
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    -webkit-font-smoothing: antialiased;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+}
+
+@layer components {
+  .section-label {
+    @apply flex items-center gap-3 text-xs font-semibold tracking-[0.15em] uppercase;
+    color: var(--accent);
+  }
+
+  .section-label .line {
+    @apply w-6 h-px;
+    background-color: var(--accent);
+  }
+
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold tracking-tight mt-2;
+    color: var(--text);
+  }
+
+  .section-desc {
+    color: var(--text-muted);
+  }
+
+  .card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .card:hover {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 1px var(--accent);
+  }
+
+  .btn-accent {
+    background-color: var(--accent);
+    color: #ffffff;
+    @apply px-5 py-2.5 text-sm font-medium rounded-lg transition-all;
+  }
+
+  .btn-accent:hover {
+    filter: brightness(1.1);
+  }
+}
